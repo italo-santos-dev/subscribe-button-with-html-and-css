@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Botão de Inscrever-se</title>
+    </head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #2F3336;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .subscribe-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #FF0000;
+            border: 2px solid #FF0000;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s,
+            transform 0.3s, box-shadow 0.3s;
+            outline: none;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .subscribe-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            transform: translateZ(-1px);
+            transition: opacity 0.3s;
+            opacity: 0;
+        }
+
+        .subscribe-button:hover::before {
+            opacity: 1;
+        }
+
+        .subscribe-button:hover {
+            background-color: #e60000;
+            border-color: #e60000;
+            transform: translateZ(15px) rotateX(15deg) rotateY(-15deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .subscribe-button:active {
+            transform: translateZ(10px) rotateX(5deg) rotateY(-5deg);
+        }
+    </style>
+    <body>
+        <button class="subscribe-button">Subscribe</button>
+    </body>
+</html>
